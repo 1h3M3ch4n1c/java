@@ -14,6 +14,7 @@ public class fileParsingThree {
 
             //get the input from the user
             Scanner userIn = new Scanner(System.in);
+            System.out.println("Enter the hour for which you want the IP Addresses");
             String userInput = userIn.nextLine();
 
             //create a FileInputStream
@@ -34,15 +35,21 @@ public class fileParsingThree {
                 arrayListOne.add(strReadOne);
             }
 
+            boolean hourPresent = false;
+
             for (String strReadTwo: arrayListOne){
                 try {
                     if (strReadTwo.split(" ")[1].equals(userInput)) {
                         System.out.println(strReadTwo.split(" ")[0]);
+                        hourPresent = true;
                     }
                 }
                 catch (Exception exceptionReasonTwo){
                     exceptionReasonTwo.printStackTrace();
                 }
+            }
+            if(!hourPresent){
+                System.out.println("The specified hour "+userInput+" is not present in the list");
             }
         }
         catch(Exception exceptionReason){
