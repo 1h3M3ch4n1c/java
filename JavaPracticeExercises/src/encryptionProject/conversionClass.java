@@ -60,7 +60,6 @@ public class conversionClass {
         String textIn = sysIn.nextLine();
         String textOutOne = textToBinaryConverter(textIn);
         System.out.println(textOutOne);
-//        binaryToTextConverter(textOutOne);
         System.out.println(binaryToTextConverter(textOutOne));
 
         sysIn.close();
